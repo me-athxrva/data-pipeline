@@ -1,0 +1,36 @@
+{
+  "name": "mayacardio-pipeline",
+  "version": "1.0.0",
+  "description": "MayaCardio Candidate Assessment: Never Lose a Heartbeat Data Pipeline",
+  "main": "src/cli/pipeline.js",
+  "bin": {
+    "pipeline": "src/cli/pipeline.js"
+  },
+  "scripts": {
+    "start": "node src/cli/pipeline.js start",
+    "cloud": "node src/cloud/cloud_server.js",
+    "status": "node src/cli/pipeline.js status",
+    "mock": "node tools/dev-mock/index.js --mode ramp --seed 7 --duration 60 --port 7100",
+    "mock:signal": "node tools/dev-mock/index.js --mode signal --seed 7 --duration 3600 --port 7100",
+    "test": "node test/e2e_test.js",
+    "test:mock": "node tools/dev-mock/test-client.js",
+    "test:faults": "node test/judge_faults_test.js",
+    "test:live": "node test/test_live_pipeline.js",
+    "check-ground-truth": "node tools/check_ground_truth.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mayacardio",
+    "biosignal",
+    "pipeline",
+    "iot",
+    "raspberry-pi"
+  ],
+  "author": "Engineering Candidate",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.23.1"
+  }
+}

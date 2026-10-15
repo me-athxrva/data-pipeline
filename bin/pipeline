@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# MayaCardio Pipeline Wrapper for Linux / Raspberry Pi
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+node "$DIR/src/cli/pipeline.js" "$@"
